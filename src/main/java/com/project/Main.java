@@ -8,18 +8,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/*
- * Aquest exemple mostra com fer una 
- * connexió a SQLite amb Java
- * 
- * A la primera crida, crea l'arxiu 
- * de base de dades hi posa dades,
- * després les modifica
- * 
- * A les següent crides ja estan
- * originalment modificades
- * (tot i que les sobreescriu cada vegada)
- */
 
 public class Main {
 
@@ -90,47 +78,7 @@ public class Main {
             }
 
         }
-
-    
-        // Llistar les taules
-/*         ArrayList<String> taules = UtilsSQLite.listTables(conn);
-        System.out.println(taules); */
-        
-
-        // Demanar informació de la taula
-
-/*         rs = UtilsSQLite.querySelect(conn, "SELECT * FROM Faccio;");
-        ResultSetMetaData rsmd = rs.getMetaData();
-        System.out.println("Informacio de la taula:");
-        for (int cnt = 1; cnt < rsmd.getColumnCount(); cnt = cnt + 1) { 
-            // Les columnes començen a 1, no hi ha columna 0!
-            String label = rsmd.getColumnLabel(cnt);
-            String name = rsmd.getColumnName(cnt);
-            int type = rsmd.getColumnType(cnt);
-            System.out.println("    " + label + ", " + name + ", " + type);
-        }
-
-        // SELECT a la base de dades
-        rs = UtilsSQLite.querySelect(conn, "SELECT * FROM Personatge;");
-        System.out.println("Contingut de la taula:");
-        while (rs.next()) {
-            System.out.println("Personatge: " + rs.getInt("id") + ", " + rs.getString("nom"));
-        } */
-        
-
-        /* // Actualitzar una fila
-        UtilsSQLite.queryUpdate(conn, "UPDATE warehouses SET name=\"MediaMarkt\" WHERE id=2;");
-
-        // Esborrar una fila
-        UtilsSQLite.queryUpdate(conn, "DELETE FROM warehouses WHERE id=3;");
-
-        // SELECT a la base de dades
-        rs = UtilsSQLite.querySelect(conn, "SELECT * FROM warehouses;");
-        System.out.println("Contingut de la taula modificada:");
-        while (rs.next()) {
-            System.out.println("    " + rs.getInt("id") + ", " + rs.getString("name"));
-        } */
-        
+   
         // Desconnectar
 
         UtilsSQLite.disconnect(conn);
